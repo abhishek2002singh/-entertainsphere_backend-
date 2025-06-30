@@ -82,4 +82,15 @@ handlerouter.get("/getPanjabiSong"), userAuth, getPanjabiSong;
 
 // comment and like yha pr hai
 
+
+
+// shorts yah pr hai
+const {
+  postShorts,
+  getshorts,
+} = require("../controller/shorts/short");
+
+handlerouter.post("/postShorts", userAuth, postShorts);
+handlerouter.get("/getShorts", userAuth, getshorts);
+
 module.exports = handlerouter;

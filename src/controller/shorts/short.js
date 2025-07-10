@@ -1,5 +1,6 @@
 const Shorts = require('../../models/shorts/shorts')
 
+
 exports.postShorts = async (req , res)=>{
     try{
         const userId = req.user?._id;
@@ -35,7 +36,7 @@ exports.getshorts = async (req, res) => {
         path: 'userId',
         select: 'firstName lastName photoUrl' 
       })
-      
+     
 
     res.status(200).json({ message: "Hindi Movies fetched successfully", shorts });
   } catch (error) {

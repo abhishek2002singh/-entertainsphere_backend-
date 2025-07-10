@@ -1,3 +1,5 @@
+// models/comment/comment.js
+
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema(
@@ -9,13 +11,18 @@ const commentSchema = new mongoose.Schema(
     },
     commentOnPostId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "Post", 
       required: true,
     },
-
     comment: {
       type: String,
       required: true,
       trim: true,
+    },
+    parentCommentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment", 
+      default: null,
     },
   },
   {

@@ -90,7 +90,23 @@ const {
   getshorts,
 } = require("../controller/shorts/short");
 
-handlerouter.post("/postShorts", userAuth, postShorts);
-handlerouter.get("/getShorts", userAuth, getshorts);
+handlerouter.post("/postShorts",userAuth, postShorts);
+handlerouter.get("/getShorts",userAuth ,  getshorts);
+
+
+// channel information 
+
+// routes/channelRoutes.js
+
+// comment 
+
+const { postComment, getCommentsForPost } = require("../controller/comment/comment");
+
+handlerouter.post("/comment/:id", userAuth, postComment);
+handlerouter.get("/comments/:postId",userAuth, getCommentsForPost);
+
+
+
+
 
 module.exports = handlerouter;
